@@ -1,0 +1,45 @@
+extends ../layouts/app
+block content
+    div(class="container")
+        div(class="row")
+            div(class=['col-xs-12','col-sm-3'])
+                div(class=['card-perfil'])
+                    img( src="/images/avatars/male.png")
+                    h2 Elvin Morales
+                    p(class="title-perfil") Ingenieria en Sistemas
+                    p Octavo ciclo
+                    p
+                        button(class=['button-perfil']) Su Perfil
+            div(class=['col-xs-12','col-sm-9'])
+                input(type="text", name="search", placeholder="Buscar amigos...")
+                br
+                hr(class="w3-clear")
+                div(class=['panel', 'panel-success'])
+                    div(class=['panel-heading']) Crear publicación
+                    form(action="/publicar", method="post")
+                        div(class=['panel-body'])
+                            div(class="form-group")
+                                textarea(class="form-control", name="contenido_pub", placeholder="¿Qué cuentas hoy?", required)
+                        div(class=['panel-footer'])
+                            button(type="submit", class=['btn','btn-primary']) Publicar
+                hr(class="w3-clear")
+                if(data.length == 0)
+                    p No hay registros
+                else
+                    each publicacion in data                    
+                        div(class=["w3-container", "w3-card-2", "w3-white", "w3-round", "w3-margin"])
+                            br
+                            img(src="/images/avatars/male.png", alt="Avatar", class=["w3-left", "w3-circle", "w3-margin-right"], style="width:60px")
+                            span(class=["w3-right", "w3-opacity"]) 16 min
+                            h4 Elvin Morales
+                            br
+                            hr(class="w3-clear")
+                            p #{publicacion.contenido}
+                            button(type="button" class=["w3-button", "btn-personalizado", "btn-default", "w3-margin-bottom"]) 
+                                i(class=["fa", "fa-thumbs-up"]) 
+                                span 
+                                span.badge 349
+                            button(type="button" class=["w3-button", "btn-personalizado", "btn-default", "w3-margin-bottom"])
+                                i(class=["fa", "fa-comment"]) 
+                                span 
+                                span.badge 83

@@ -1,0 +1,18 @@
+{
+  "name": "red_social",
+  "version": "1.0.0",
+  "description": "Es un sistema donde los usuarios podran hacer publicaciones y comentarios sobre esas publicaciones e indicar si les gusta o no y cada usuario tendra un perfil que lo identifique.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Elvin Morales",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mysql": "^2.14.1",
+    "pug": "^2.0.0-rc.3"
+  }
+}
